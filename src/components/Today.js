@@ -20,7 +20,9 @@ export default function Today({ forcast, isLoading, error }) {
         alt={`Icon Code ${forcast.weather[0].icon}`}
       />
     );
-    descriptionContent = <p className="temperature">{forcast.main.temp}°</p>;
+    descriptionContent = (
+      <p className="description">{forcast.weather[0].description}</p>
+    );
   }
   return (
     <div className="today-forcast">
