@@ -1,6 +1,7 @@
 // App colors
-@app-primary: #eef6fb;
-@app-secondary: #fff;
+@app-primary: #EEF6FB;
+@app-secondary: #FFF;
+@app-tertiary: #5FB0E8;
 
 // App Font Sizes
 @header-font: 200%;
@@ -49,6 +50,11 @@ body {
   font-size: @header-font;
   .city {
     cursor: pointer;
+  }
+  .active-city {
+    .city();
+    font-weight: 800;
+    color: @app-tertiary;
   }
   @media @tablet {
     flex-direction: column;

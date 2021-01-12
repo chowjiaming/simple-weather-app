@@ -19,7 +19,7 @@ function App() {
     <div className="wrapper">
       {/* Passing the clicked city from the navbar to the app state.
           My custom hook */}
-      <Navbar cityClicked={(clickedCity) => setCity(clickedCity)} />
+      <Navbar city={city} cityClicked={(clickedCity) => setCity(clickedCity)} />
       <div className="weather-container">
         <Today forcast={forcast} isLoading={isLoading} error={error} />
         {/* I would use the map function to map through the array

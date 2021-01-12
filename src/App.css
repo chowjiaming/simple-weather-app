@@ -20,10 +20,10 @@
   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE7g4.ttf) format('truetype');
 }
 .bordered {
-  border: solid 0.1em #fff;
+  border: solid 0.1em #FFF;
 }
 body {
-  background: #eef6fb;
+  background: #EEF6FB;
   font-family: "Montserrat", sans-serif;
 }
 .wrapper {
@@ -55,6 +55,11 @@ body {
 .navbar .city {
   cursor: pointer;
 }
+.navbar .active-city {
+  cursor: pointer;
+  font-weight: 800;
+  color: #5FB0E8;
+}
 @media only screen and (min-width: 530px) and (max-width: 949px) {
   .navbar {
     flex-direction: column;
@@ -66,8 +71,8 @@ body {
   }
 }
 .weather-container {
-  background: #eef6fb;
-  border: solid 0.1em #fff;
+  background: #EEF6FB;
+  border: solid 0.1em #FFF;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px;
   font-size: 150%;
@@ -85,7 +90,7 @@ body {
   }
 }
 .weather-container .today-forcast {
-  border: solid 0.1em #fff;
+  border: solid 0.1em #FFF;
   flex-basis: 100%;
 }
 .weather-container .today-forcast .temperature {
@@ -113,7 +118,7 @@ body {
   margin: 0;
 }
 .weather-container .extended-forcast {
-  border: solid 0.1em #fff;
+  border: solid 0.1em #FFF;
   flex-basis: calc(25% - 0.2em);
   height: 205px;
 }
