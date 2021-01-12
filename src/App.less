@@ -24,3 +24,88 @@ body {
   background: @app-primary;
   font-family: "Montserrat", sans-serif;
 }
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: center;
+  @media @desktop-xl {
+    max-width: 768px;
+  }
+  @media @desktop {
+    max-width: 640px;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 1em 4em;
+  margin: 0;
+  font-size: @header-font;
+  .city {
+    cursor: pointer;
+  }
+  @media @tablet {
+    flex-direction: column;
+  }
+  @media @mobile {
+    flex-direction: column;
+  }
+}
+
+.weather-container {
+  background: @app-primary;
+  .bordered();
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px;
+  font-size: @subheader-font;
+  display: flex;
+  flex-wrap: wrap;
+  @media @tablet {
+    flex-direction: column;
+  }
+  @media @mobile {
+    flex-direction: column;
+  }
+  .today-forcast {
+    .bordered();
+    flex-basis: 100%;
+    .temperature {
+      font-weight: 800;
+      font-size: 250%;
+      margin: 0;
+    }
+    .weather-icon {
+      width: 25%;
+      vertical-align: middle;
+    }
+    .weather-description {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 0.5em;
+      padding-bottom: 0.5em;
+    }
+    .date {
+      font-size: @subheader-font;
+      padding-top: 1em;
+      margin: 0;
+    }
+    .description {
+      font-size: @subheader-font;
+      margin: 0;
+    }
+  }
+  .extended-forcast {
+    .bordered();
+    flex-basis: calc(25% - 0.2em);
+    height: 205px;
+    .temperature-extended {
+      font-weight: 600;
+    }
+  }
+}

@@ -3,6 +3,9 @@ import { useState } from "react";
 import "./App.css";
 // My custom fetch API hook
 import useFetchWeather from "./helpers/useFetchWeather";
+import Navbar from "./components/Navbar";
+import Today from "./components/Today";
+import ExtendedForcast from "./components/ExtendedForcast";
 
 function App() {
   // Set default city to Ottawa when the app starts
@@ -10,10 +13,40 @@ function App() {
   // Grabbing app params from my custom hook
   const { forcast, isLoading, error } = useFetchWeather(city);
 
-  console.log(forcast, isLoading, error);
+  if (error) console.log(error);
+
   return (
-    <div className="App">
-      <h1>Weather App</h1>
+    <div className="wrapper">
+      {/* Passing the clicked city from the navbar to the app state.
+          My custom hook */}
+      <Navbar cityClicked={(clickedCity) => setCity(clickedCity)} />
+      <div className="weather-container">
+        <Today forcast={forcast} isLoading={isLoading} error={error} />
+        {/* I would use the map function to map through the array
+            of returned weather results and pass down only the forcast
+            for that specific day of the week if the API provided an 
+            extended forcast. */}
+        <ExtendedForcast
+          forcast={forcast}
+          isLoading={isLoading}
+          error={error}
+        />
+        <ExtendedForcast
+          forcast={forcast}
+          isLoading={isLoading}
+          error={error}
+        />
+        <ExtendedForcast
+          forcast={forcast}
+          isLoading={isLoading}
+          error={error}
+        />
+        <ExtendedForcast
+          forcast={forcast}
+          isLoading={isLoading}
+          error={error}
+        />
+      </div>
     </div>
   );
 }
