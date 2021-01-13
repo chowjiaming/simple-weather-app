@@ -82,6 +82,8 @@ body {
   }
   .today-forcast {
     .bordered();
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     flex-basis: 100%;
     .temperature {
       font-weight: 800;
@@ -126,7 +128,7 @@ body {
       }
     }
     .temperature-extended {
-      margin-top: .75em;
+      margin-top: 0.75em;
       padding-bottom: 1.5em;
       @media @tablet {
         margin-top: 0;
@@ -145,6 +147,20 @@ body {
         padding-bottom: 2.5em;
       }
       font-weight: 600;
+    }
+  }
+  .extended-forcast-first {
+    .extended-forcast();
+    border-bottom-left-radius: 8px;
+  }
+  .extended-forcast-last {
+    .extended-forcast();
+    border-bottom-right-radius: 8px;
+    @media @tablet {
+      border-bottom-left-radius: 8px;
+    }
+    @media @mobile {
+      border-bottom-left-radius: 8px;
     }
   }
 }

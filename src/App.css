@@ -92,6 +92,8 @@ body {
 }
 .weather-container .today-forcast {
   border: solid 0.1em #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   flex-basis: 100%;
   padding-bottom: 1em;
 }
@@ -164,6 +166,112 @@ body {
 @media only screen and (min-width: 530px) and (max-width: 949px) {
   .weather-container .extended-forcast .temperature-extended {
     padding-bottom: 2.5em;
+  }
+}
+.weather-container .extended-forcast-first {
+  border: solid 0.1em #fff;
+  flex-basis: calc(25% - 0.2em);
+  height: 200px;
+  border-bottom-left-radius: 8px;
+}
+.weather-container .extended-forcast-first .day {
+  margin-bottom: 0.5em;
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .extended-forcast-first .day {
+    margin-top: 0.75em;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 529px) {
+  .weather-container .extended-forcast-first .day {
+    margin-top: 0.75em;
+    margin-bottom: 0;
+  }
+}
+.weather-container .extended-forcast-first .temperature-extended {
+  margin-top: 0.75em;
+  padding-bottom: 1.5em;
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .extended-forcast-first .temperature-extended {
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+}
+@media only screen and (max-width: 529px) {
+  .weather-container .extended-forcast-first .temperature-extended {
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+}
+.weather-container .extended-forcast-first .weather-icon-extended {
+  max-width: 30%;
+}
+.weather-container .extended-forcast-first .temperature-extended {
+  font-weight: 600;
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .extended-forcast-first .temperature-extended {
+    padding-bottom: 2.5em;
+  }
+}
+.weather-container .extended-forcast-last {
+  border: solid 0.1em #fff;
+  flex-basis: calc(25% - 0.2em);
+  height: 200px;
+  border-bottom-right-radius: 8px;
+}
+.weather-container .extended-forcast-last .day {
+  margin-bottom: 0.5em;
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .extended-forcast-last .day {
+    margin-top: 0.75em;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 529px) {
+  .weather-container .extended-forcast-last .day {
+    margin-top: 0.75em;
+    margin-bottom: 0;
+  }
+}
+.weather-container .extended-forcast-last .temperature-extended {
+  margin-top: 0.75em;
+  padding-bottom: 1.5em;
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .extended-forcast-last .temperature-extended {
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+}
+@media only screen and (max-width: 529px) {
+  .weather-container .extended-forcast-last .temperature-extended {
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+}
+.weather-container .extended-forcast-last .weather-icon-extended {
+  max-width: 30%;
+}
+.weather-container .extended-forcast-last .temperature-extended {
+  font-weight: 600;
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .extended-forcast-last .temperature-extended {
+    padding-bottom: 2.5em;
+  }
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .extended-forcast-last {
+    border-bottom-left-radius: 8px;
+  }
+}
+@media only screen and (max-width: 529px) {
+  .weather-container .extended-forcast-last {
+    border-bottom-left-radius: 8px;
   }
 }
 /*# sourceMappingURL=App.css.map */

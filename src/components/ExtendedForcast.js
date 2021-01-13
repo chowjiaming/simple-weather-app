@@ -1,8 +1,16 @@
 import React from "react";
 
-export default function ExtendedForcast({ forcast, error }) {
+export default function ExtendedForcast({ forcast, position, error }) {
+  let forcastClassName;
+  if (position === 0) {
+    forcastClassName = "extended-forcast-first";
+  } else if (position === 3) {
+    forcastClassName = "extended-forcast-last";
+  } else {
+    forcastClassName = "extended-forcast";
+  }
   return (
-    <div className="extended-forcast">
+    <div className={forcastClassName}>
       <p className="day">
         {/* Format datetime from API with slashes instead of hyphens and grab day of week */}
         {new Date(forcast.datetime.replace(/-/g, "/")).toString().split(" ")[0]}

@@ -31,11 +31,12 @@ function App() {
         {isLoading
           ? null
           : // Return the rest of 5 day forcast minus the current day
-            forcast.data.slice(1).map((dailyForcast) => {
+            forcast.data.slice(1).map((dailyForcast, i) => {
               return (
                 <ExtendedForcast
                   key={dailyForcast.valid_date}
                   forcast={dailyForcast}
+                  position={i}
                   error={error}
                 />
               );
