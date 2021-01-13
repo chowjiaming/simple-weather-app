@@ -7,6 +7,8 @@ import useFetchWeather from "./helpers/useFetchWeather";
 import Navbar from "./components/Navbar";
 import Today from "./components/Today";
 import ExtendedForcast from "./components/ExtendedForcast";
+// Import loading spinner
+import spinner from "./spinner.gif";
 
 function App() {
   // Set default city to Ottawa when the app starts
@@ -22,7 +24,7 @@ function App() {
       <div className="weather-container">
         {/* Display loading when data is being fetched */}
         {isLoading ? (
-          <h1>Loading...</h1>
+          <img className="loading-spinner" alt="Loading..." src={spinner} />
         ) : (
           <Today forcast={forcast.data[0]} error={error} />
         )}

@@ -78,6 +78,7 @@ body {
   font-size: 150%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 @media only screen and (min-width: 530px) and (max-width: 949px) {
   .weather-container {
@@ -108,12 +109,6 @@ body {
   vertical-align: middle;
   padding-left: 0.5em;
   padding-bottom: 0.5em;
-}
-@media only screen and (min-width: 530px) and (max-width: 949px) {
-  .weather-container .today-forcast .weather-description {
-    padding-left: 1.75em;
-    padding-bottom: 1.75em;
-  }
 }
 .weather-container .today-forcast .date {
   font-size: 150%;
