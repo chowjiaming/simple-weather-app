@@ -1,4 +1,5 @@
 import { useReducer, useEffect } from "react";
+// grab API key from .env file locally or env params from netlify
 const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 
 // Actions for fetching and receiving data
@@ -51,7 +52,8 @@ export default function useFetchWeather(city) {
         });
     };
     fetchNewData();
+    // fire hook when state in App.js changes
   }, [city]);
-
+  // return parameters in state
   return state;
 }

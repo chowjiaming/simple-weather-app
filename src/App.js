@@ -12,7 +12,6 @@ function App() {
   const [city, setCity] = useState("Ottawa");
   // Grabbing app params from my custom hook
   const { forcast, isLoading, error } = useFetchWeather(city);
-
   if (error) console.log(error);
 
   return (

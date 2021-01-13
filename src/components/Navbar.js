@@ -1,10 +1,14 @@
 import React from "react";
 
 export default function Navbar({ cityClicked, city }) {
+  // handler to set the current city App.js state
+  // custom hook will fire when the state changes in App.js
   const handleClick = (e) => {
     cityClicked(e.target.innerHTML);
   };
+  // Can modify list of cities here
   let cities = ["Ottawa", "Moscow", "Tokyo"];
+  // set active city classname upon re-render
   let cityList = cities.map((cityName) => {
     if (city === cityName) {
       return (
@@ -23,15 +27,6 @@ export default function Navbar({ cityClicked, city }) {
 
   return (
     <ul className="navbar">
-      {/* <li className="city" onClick={handleClick}>
-        Ottawa
-      </li>
-      <li className="city" onClick={handleClick}>
-        Moscow
-      </li>
-      <li className="city" onClick={handleClick}>
-        Tokyo
-      </li> */}
       {cityList}
     </ul>
   );

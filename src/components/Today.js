@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Today({ forcast, isLoading, error }) {
-  // Content variables to display content based on parameters
+  // Content variables to display content based on parameter changes passed from custom hook
   let temperatureContent, iconContent, descriptionContent;
   if (isLoading) {
     temperatureContent = <p>Loading...</p>;
@@ -27,7 +27,6 @@ export default function Today({ forcast, isLoading, error }) {
   return (
     <div className="today-forcast">
       <p className="date">Today</p>
-      {/* Display loading while data is fetching */}
       {iconContent}
       <div className="weather-description">
         {temperatureContent}
