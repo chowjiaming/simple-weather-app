@@ -12,13 +12,13 @@ export default function Navbar({ cityClicked, city }) {
   let cityList = cities.map((cityName) => {
     if (city === cityName) {
       return (
-        <li className="active-city" onClick={handleClick}>
+        <li key={cityName} className="active-city" onClick={handleClick}>
           {cityName}
         </li>
       );
     } else {
       return (
-        <li className="city" onClick={handleClick}>
+        <li key={cityName} className="city" onClick={handleClick}>
           {cityName}
         </li>
       );

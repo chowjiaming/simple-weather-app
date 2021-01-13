@@ -20,10 +20,10 @@
   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE7g4.ttf) format('truetype');
 }
 .bordered {
-  border: solid 0.1em #FFF;
+  border: solid 0.1em #fff;
 }
 body {
-  background: #EEF6FB;
+  background: #eef6fb;
   font-family: "Montserrat", sans-serif;
 }
 .wrapper {
@@ -58,7 +58,7 @@ body {
 .navbar .active-city {
   cursor: pointer;
   font-weight: 800;
-  color: #5FB0E8;
+  color: #5fb0e8;
 }
 @media only screen and (min-width: 530px) and (max-width: 949px) {
   .navbar {
@@ -71,8 +71,8 @@ body {
   }
 }
 .weather-container {
-  background: #EEF6FB;
-  border: solid 0.1em #FFF;
+  background: #eef6fb;
+  border: solid 0.1em #fff;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px;
   font-size: 150%;
@@ -90,8 +90,9 @@ body {
   }
 }
 .weather-container .today-forcast {
-  border: solid 0.1em #FFF;
+  border: solid 0.1em #fff;
   flex-basis: 100%;
+  padding-bottom: 1em;
 }
 .weather-container .today-forcast .temperature {
   font-weight: 800;
@@ -108,6 +109,12 @@ body {
   padding-left: 0.5em;
   padding-bottom: 0.5em;
 }
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .today-forcast .weather-description {
+    padding-left: 1.75em;
+    padding-bottom: 1.75em;
+  }
+}
 .weather-container .today-forcast .date {
   font-size: 150%;
   padding-top: 1em;
@@ -118,11 +125,50 @@ body {
   margin: 0;
 }
 .weather-container .extended-forcast {
-  border: solid 0.1em #FFF;
+  border: solid 0.1em #fff;
   flex-basis: calc(25% - 0.2em);
-  height: 205px;
+  height: 200px;
+}
+.weather-container .extended-forcast .day {
+  margin-bottom: 0.5em;
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .extended-forcast .day {
+    margin-top: 0.75em;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 529px) {
+  .weather-container .extended-forcast .day {
+    margin-top: 0.75em;
+    margin-bottom: 0;
+  }
+}
+.weather-container .extended-forcast .temperature-extended {
+  margin-top: 0.75em;
+  padding-bottom: 1.5em;
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .extended-forcast .temperature-extended {
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+}
+@media only screen and (max-width: 529px) {
+  .weather-container .extended-forcast .temperature-extended {
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+}
+.weather-container .extended-forcast .weather-icon-extended {
+  max-width: 30%;
 }
 .weather-container .extended-forcast .temperature-extended {
   font-weight: 600;
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .weather-container .extended-forcast .temperature-extended {
+    padding-bottom: 2.5em;
+  }
 }
 /*# sourceMappingURL=App.css.map */

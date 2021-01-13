@@ -1,7 +1,7 @@
 // App colors
-@app-primary: #EEF6FB;
-@app-secondary: #FFF;
-@app-tertiary: #5FB0E8;
+@app-primary: #eef6fb;
+@app-secondary: #fff;
+@app-tertiary: #5fb0e8;
 
 // App Font Sizes
 @header-font: 200%;
@@ -96,6 +96,10 @@ body {
       vertical-align: middle;
       padding-left: 0.5em;
       padding-bottom: 0.5em;
+      @media @tablet {
+        padding-left: 1.75em;
+        padding-bottom: 1.75em;
+      }
     }
     .date {
       font-size: @subheader-font;
@@ -106,13 +110,43 @@ body {
       font-size: @subheader-font;
       margin: 0;
     }
+    padding-bottom: 1em;
   }
   .extended-forcast {
     .bordered();
     // calculate extended forcast box sizing based on 25% minus border widths
     flex-basis: calc(25% - 0.2em);
-    height: 205px;
+    height: 200px;
+    .day {
+      margin-bottom: 0.5em;
+      @media @tablet {
+        margin-top: 0.75em;
+        margin-bottom: 0;
+      }
+      @media @mobile {
+        margin-top: 0.75em;
+        margin-bottom: 0;
+      }
+    }
     .temperature-extended {
+      margin-top: .75em;
+      padding-bottom: 1.5em;
+      @media @tablet {
+        margin-top: 0;
+        margin-bottom: 2em;
+      }
+      @media @mobile {
+        margin-top: 0;
+        margin-bottom: 2em;
+      }
+    }
+    .weather-icon-extended {
+      max-width: 30%;
+    }
+    .temperature-extended {
+      @media @tablet {
+        padding-bottom: 2.5em;
+      }
       font-weight: 600;
     }
   }

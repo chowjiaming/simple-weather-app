@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 // My custom fetch API hook
 import useFetchWeather from "./helpers/useFetchWeather";
+// Import components
 import Navbar from "./components/Navbar";
 import Today from "./components/Today";
 import ExtendedForcast from "./components/ExtendedForcast";
@@ -13,38 +14,30 @@ function App() {
   // Grabbing app params from my custom hook
   const { forcast, isLoading, error } = useFetchWeather(city);
   if (error) console.log(error);
-
   return (
     <div className="wrapper">
       {/* Passing the clicked city from the navbar to the app state.
           My custom hook */}
       <Navbar city={city} cityClicked={(clickedCity) => setCity(clickedCity)} />
       <div className="weather-container">
-        <Today forcast={forcast} isLoading={isLoading} error={error} />
-        {/* I would use the map function to map through the array
-            of returned weather results and pass down only the forcast
-            for that specific day of the week if the API provided an 
-            extended forcast. */}
-        <ExtendedForcast
-          forcast={forcast}
-          isLoading={isLoading}
-          error={error}
-        />
-        <ExtendedForcast
-          forcast={forcast}
-          isLoading={isLoading}
-          error={error}
-        />
-        <ExtendedForcast
-          forcast={forcast}
-          isLoading={isLoading}
-          error={error}
-        />
-        <ExtendedForcast
-          forcast={forcast}
-          isLoading={isLoading}
-          error={error}
-        />
+        {/* Display loading when data is being fetched */}
+        {isLoading ? (
+          <h1>Loading...</h1>
+        ) : (
+          <Today forcast={forcast.data[0]} error={error} />
+        )}
+        {isLoading
+          ? null
+          : // Return the rest of 5 day forcast minus the current day
+            forcast.data.slice(1).map((dailyForcast) => {
+              return (
+                <ExtendedForcast
+                  key={dailyForcast.valid_date}
+                  forcast={dailyForcast}
+                  error={error}
+                />
+              );
+            })}
       </div>
     </div>
   );

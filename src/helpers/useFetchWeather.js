@@ -38,7 +38,7 @@ export default function useFetchWeather(city) {
     const fetchNewData = () => {
       dispatch({ type: ACTIONS.MAKE_REQUEST });
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${REACT_APP_API_KEY}`
+        `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&days=5&key=${REACT_APP_API_KEY}`
       )
         .then((res) => res.json())
         .then((data) => {

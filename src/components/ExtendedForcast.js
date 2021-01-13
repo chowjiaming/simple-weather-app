@@ -1,30 +1,24 @@
 import React from "react";
 
-export default function ExtendedForcast({ forcast, isLoading, error }) {
-  let temperatureContent, iconContent;
-  if (isLoading) {
-    temperatureContent = <p>Loading...</p>;
-    iconContent = <p>Loading...</p>;
-  } else if (error) {
-    temperatureContent = <p>Error!</p>;
-    iconContent = <p>Error!</p>;
-  } else {
-    temperatureContent = (
-      <p className="temperature-extended">{forcast.main.temp}°</p>
-    );
-    iconContent = (
-      <img
-        className="weather-icon"
-        src={`https://openweathermap.org/img/w/${forcast.weather[0].icon}.png`}
-        alt={`Icon Code ${forcast.weather[0].icon}`}
-      />
-    );
-  }
+export default function ExtendedForcast({ forcast, error }) {
   return (
     <div className="extended-forcast">
-      <p className="day">Today</p>
-      {iconContent}
-      {temperatureContent}
+      <p className="day">
+        {/* Format datetime from API with slashes instead of hyphens and grab day of week */}
+        {new Date(forcast.datetime.replace(/-/g, "/")).toString().split(" ")[0]}
+      </p>
+      {error ? null : (
+        <img
+          className="weather-icon-extended"
+          src={`https://www.weatherbit.io/static/img/icons/${forcast.weather.icon}.png`}
+          alt={`Icon Code ${forcast.weather.icon}`}
+        />
+      )}
+      {error ? (
+        <p>Error!!</p>
+      ) : (
+        <p className="temperature-extended">{forcast.temp}°</p>
+      )}
     </div>
   );
 }
